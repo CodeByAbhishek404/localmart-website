@@ -289,30 +289,32 @@
       document.body.classList.toggle("light");
     }
 
-    // Handle form submissions
-    forms.signupCustomerForm.addEventListener("submit", e => {
-      e.preventDefault();
-      alert("Customer signed up!");
-      window.location.href = "../html/cus_dash.html";
-    });
 
-    forms.signupShopForm.addEventListener("submit", e => {
-      e.preventDefault();
-      alert("Shopkeeper signed up!");
-      window.location.href = "../html/shop_dash.html";
-    });
+   // Handle form submissions
+forms.signupCustomerForm.addEventListener("submit", e => {
+  e.preventDefault();
+  alert("Customer signed up!");
+  window.location.href = "/localmart-website/html/cus_dash.html";
+});
 
-    forms.loginCustomerForm.addEventListener("submit", e => {
-      e.preventDefault();
-      alert("Customer logged in!");
-      window.location.href = "../html/cus_dash.html";
-    });
+forms.signupShopForm.addEventListener("submit", e => {
+  e.preventDefault();
+  alert("Shopkeeper signed up!");
+  window.location.href = "/localmart-website/html/shop_dash.html";
+});
 
-    forms.loginShopForm.addEventListener("submit", e => {
-      e.preventDefault();
-      alert("Shopkeeper logged in!");
-      window.location.href = "../html/shop_dash.html";
-    });
+forms.loginCustomerForm.addEventListener("submit", e => {
+  e.preventDefault();
+  alert("Customer logged in!");
+  window.location.href = "/localmart-website/html/cus_dash.html";
+});
+
+forms.loginShopForm.addEventListener("submit", e => {
+  e.preventDefault();
+  alert("Shopkeeper logged in!");
+  window.location.href = "/localmart-website/html/shop_dash.html";
+});
+
   </script>
 </body>
 </html>
