@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LocalMart – Login / Sign Up</title>
+  <style>
+    :root {
+    --bg-color: linear-gradient(135deg, #3a303e, #000000);
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --text-color: #ffffff;
+    --input-bg: rgba(255, 255, 255, 0.9);
+    --button-bg: #ac61c552;
+    --button-hover: #694170;
+}
+
+    body.light {
+    --bg-color: linear-gradient(135deg, #9f488b, #999999);
+    --card-bg: rgba(255, 255, 255, 0.6);
+    --text-color: #242424;
+    --input-bg: #ffffff;
+    --button-bg: #a15b88;
+    --button-hover: #832480;
+}
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: background 0.5s ease;
+    }
+
+    .header {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--text-color);
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      background: none;
+      border: 2px solid var(--text-color);
+      color: var(--text-color);
+      border-radius: 8px;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 16px;
+      padding: 2rem;
+      width: 90%;
+      max-width: 460px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      color: var(--text-color);
+      text-align: center;
+    }
+
+    .card h2 {
+      margin-top: 0;
+    }
+
+    .mode-tabs, .switch-btns {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .mode-tabs button, .switch-btns button {
+      flex: 1;
+      margin: 0 5px;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      background-color: rgba(255,255,255,0.2);
+      color: var(--text-color);
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .mode-tabs button.active, .switch-btns button.active {
+      background-color: #ffffff;
+      color: #7b4397;
+    }
+
+    .form {
+      display: none;
+      text-align: left;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .form.active {
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text-color);
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      background: var(--input-bg);
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: var(--button-bg);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--button-hover);
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @media (max-width: 500px) {
+      .card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">🏬 LocalMart</div>
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+
+  <div class="card">
+    <h2>🔐 Welcome to LocalMart</h2>
+
+    <div class="mode-tabs">
+      <button class="active" onclick="switchMode('signup')" id="signupTab">Sign Up</button>
+      <button onclick="switchMode('login')" id="loginTab">Login</button>
+    </div>
+
+    <div class="switch-btns">
+      <button class="active" onclick="switchForm('customer')" id="customerBtn">Customer</button>
+      <button onclick="switchForm('shopkeeper')" id="shopkeeperBtn">Shopkeeper</button>
+    </div>
+
+    <form class="form active" id="signupCustomerForm">
+      <div class="form-group">
+        <label for="custName">Full Name</label>
+        <input type="text" id="custName" required placeholder="John Doe">
+      </div>
+      <div class="form-group">
+        <label for="custEmail">Email</label>
+        <input type="email" id="custEmail" required placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label for="custPassword">Password</label>
+        <input type="password" id="custPassword" required placeholder="••••••••">
+      </div>
+      <button type="submit" class="submit-btn">Sign Up as Customer</button>
+    </form>
+
+    <form class="form" id="signupShopForm">
+      <div class="form-group">
+        <label for="shopName">Shop Name</label>
+        <input type="text" id="shopName" required placeholder="Mohan Kirana Store">
+      </div>
+      <div class="form-group">
+        <label for="ownerName">Owner Name</label>
+        <input type="text" id="ownerName" required placeholder="Mohan Yadav">
+      </div>
+      <div class="form-group">
+        <label for="shopEmail">Email</label>
+        <input type="email" id="shopEmail" required placeholder="shop@example.com">
+      </div>
+      <div class="form-group">
+        <label for="shopPassword">Password</label>
+        <input type="password" id="shopPassword" required placeholder="••••••••">
+      </div>
+      <button type="submit" class="submit-btn">Sign Up as Shopkeeper</button>
+    </form>
+
+    <form class="form" id="loginCustomerForm">
+      <div class="form-group">
+        <label for="loginCustEmail">Email</label>
+        <input type="email" id="loginCustEmail" required placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label for="loginCustPassword">Password</label>
+        <input type="password" id="loginCustPassword" required placeholder="••••••••">
+      </div>
+      <button type="submit" class="submit-btn">Login as Customer</button>
+    </form>
+
+    <form class="form" id="loginShopForm">
+      <div class="form-group">
+        <label for="loginShopEmail">Email</label>
+        <input type="email" id="loginShopEmail" required placeholder="shop@example.com">
+      </div>
+      <div class="form-group">
+        <label for="loginShopPassword">Password</label>
+        <input type="password" id="loginShopPassword" required placeholder="••••••••">
+      </div>
+      <button type="submit" class="submit-btn">Login as Shopkeeper</button>
+    </form>
+  </div>
+
+  <script>
+    const signupTab = document.getElementById("signupTab");
+    const loginTab = document.getElementById("loginTab");
+    const customerBtn = document.getElementById("customerBtn");
+    const shopkeeperBtn = document.getElementById("shopkeeperBtn");
+
+    const forms = {
+      signupCustomerForm: document.getElementById("signupCustomerForm"),
+      signupShopForm: document.getElementById("signupShopForm"),
+      loginCustomerForm: document.getElementById("loginCustomerForm"),
+      loginShopForm: document.getElementById("loginShopForm"),
+    };
+
+    let currentMode = 'signup';
+    let currentRole = 'customer';
+
+    function switchMode(mode) {
+      currentMode = mode;
+      signupTab.classList.toggle("active", mode === "signup");
+      loginTab.classList.toggle("active", mode === "login");
+      updateVisibleForm();
+    }
+
+    function switchForm(role) {
+      currentRole = role;
+      customerBtn.classList.toggle("active", role === "customer");
+      shopkeeperBtn.classList.toggle("active", role === "shopkeeper");
+      updateVisibleForm();
+    }
+
+    function updateVisibleForm() {
+      Object.values(forms).forEach(form => form.classList.remove("active"));
+
+      let formId = "";
+      if (currentMode === "signup" && currentRole === "customer") {
+        formId = "signupCustomerForm";
+      } else if (currentMode === "signup" && currentRole === "shopkeeper") {
+        formId = "signupShopForm";
+      } else if (currentMode === "login" && currentRole === "customer") {
+        formId = "loginCustomerForm";
+      } else if (currentMode === "login" && currentRole === "shopkeeper") {
+        formId = "loginShopForm";
+      }
+
+      forms[formId].classList.add("active");
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle("light");
+    }
+
+    // Handle form submissions
+    forms.signupCustomerForm.addEventListener("submit", e => {
+      e.preventDefault();
+      alert("Customer signed up!");
+      window.location.href = "cus_dash.html";
+    });
+
+    forms.signupShopForm.addEventListener("submit", e => {
+      e.preventDefault();
+      alert("Shopkeeper signed up!");
+      window.location.href = "shop_dash.html";
+    });
+
+    forms.loginCustomerForm.addEventListener("submit", e => {
+      e.preventDefault();
+      alert("Customer logged in!");
+      window.location.href = "cus_dash.html";
+    });
+
+    forms.loginShopForm.addEventListener("submit", e => {
+      e.preventDefault();
+      alert("Shopkeeper logged in!");
+      window.location.href = "shop_dash.html";
+    });
+  </script>
+</body>
+</html>

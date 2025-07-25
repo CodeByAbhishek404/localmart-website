@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LocalMart – Shopkeeper Dashboard</title>
+  <link rel="stylesheet" href="../css/shopkeeper.css">
+</head>
+<body>
+  <header>
+    <h1>LocalMart – Shopkeeper Dashboard</h1>
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <!-- About Us Section -->
+      <div class="about-us" id="aboutUs">
+        ℹ️ About Us
+        <div class="about-dropdown" id="aboutDropdown">
+          <h4>About LocalMart</h4>
+          <div class="about-content">
+            <p>LocalMart is your trusted neighborhood marketplace connecting local shopkeepers with customers.</p>
+            <p><span class="highlight">Our Mission:</span> Empowering local businesses with digital tools to grow and serve their communities better.</p>
+            <p><span class="highlight">Founded:</span> 2020</p>
+            <p><span class="highlight">Serving:</span> 500+ Local Shops</p>
+            <p><span class="highlight">Vision:</span> Building stronger local economies through technology.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Us Section -->
+      <div class="contact-us" id="contactUs">
+        📞 Contact Us
+        <div class="contact-dropdown" id="contactDropdown">
+          <h4>Get in Touch</h4>
+          <div class="contact-info">
+            <p><span>Phone:</span> +91 98765 43210</p>
+            <p><span>Email:</span> support@localmart.com</p>
+            <p><span>Address:</span> 123 Market Street, Delhi</p>
+            <p><span>Hours:</span> 9 AM - 8 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-welcome">
+        <span style="font-size: 1.5rem;">🏪</span>
+        <span>Welcome, Shopkeeper</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Shop Info -->
+    <div class="section">
+      <h2>Your Shop Info</h2>
+      <div class="shop-info">
+        <p><span>Shop Name:</span> Mohan Kirana Store</p>
+        <p><span>Owner:</span> Mohan Yadav</p>
+        <p><span>Email:</span> mohan.kirana@example.com</p>
+      </div>
+    </div>
+
+    <!-- Product Upload -->
+    <div class="section">
+      <h2>Add New Product</h2>
+      <form id="productForm">
+        <div class="form-group">
+          <label for="pname">Product Name</label>
+          <input type="text" id="pname" name="pname" required>
+        </div>
+        <div class="form-group">
+          <label for="pcategory">Category</label>
+          <select id="pcategory" name="pcategory" required>
+            <option value="">Select Category</option>
+            <option value="Milk">Milk</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value="Grocery">Grocery</option>
+            <option value="Fruits">Fruits</option>
+            <option value="Organic">Organic</option>
+            <option value="Medicine">Medicine</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="pprice">Price (₹)</label>
+          <input type="number" id="pprice" name="pprice" required min="0" step="0.01">
+        </div>
+        <button type="submit" class="submit-btn">Upload Product</button>
+      </form>
+    </div>
+
+    <!-- Product List -->
+    <div class="section">
+      <h2>Your Products</h2>
+      <div id="productList" class="product-list">
+        <div class="empty-state" id="emptyState">
+          No products added yet. Add your first product above!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/shopkeeper.js" defer></script>
+</body>
+</html>
