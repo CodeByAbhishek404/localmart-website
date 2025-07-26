@@ -51,7 +51,8 @@ local-mart/
 
 # Open index.html in your browser
 🌐 Live Demo
-🔗 View Live Project
+🔗 [View Live Project](https://codebyabhishek404.github.io/localmart-website/)
+
 
 👥 Team Members
 Abhishek Jha – Frontend Developer
