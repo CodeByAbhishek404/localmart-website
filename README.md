@@ -49,9 +49,11 @@ local-mart/
 │
 └── README.md              # Project description
 
-# Open index.html in your browser
-##🌐 Live Demo
-🔗 [View live Project](https://codebyabhishek404.github.io/localmart-website/)
+## 🚀 How to Run  
+Open `index.html` in your browser.
+
+## 🌐 Live Demo  
+[🔗 View Live Project](https://codebyabhishek404.github.io/localmart-website/)
 
 
 👥 Team Members
