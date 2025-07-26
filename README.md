@@ -50,7 +50,7 @@ local-mart/
 └── README.md              # Project description
 
 # Open index.html in your browser
-🌐 Live Demo
+##🌐 Live Demo
 🔗 [View live Project](https://codebyabhishek404.github.io/localmart-website/)
 
 
