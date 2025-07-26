@@ -6,19 +6,19 @@
 
 ## 🔥 Features
 
-- Clean and modern UI
-- Responsive design (mobile + desktop)
-- Product category section
-- Toggle for User / Shopkeeper view *(if implemented)*
-- Smooth layout and structure
+- Clean and modern UI  
+- Responsive design (mobile + desktop)  
+- Product category section  
+- Toggle for User / Shopkeeper view *(if implemented)*  
+- Smooth layout and structure  
 
 ---
 
 ## 🛠️ Tech Stack
 
-- HTML
-- CSS
-- JavaScript
+- HTML  
+- CSS  
+- JavaScript  
 
 ---
 
@@ -30,7 +30,9 @@ git clone https://github.com/your-username/local-mart.git
 
 # Go into the project folder
 cd local-mart
-
+perl
+Copy
+Edit
 local-mart/
 ├── css/
 │   ├── cus.css
@@ -48,13 +50,11 @@ local-mart/
 │   └── shopkeeper.js      # JS for shopkeeper view
 │
 └── README.md              # Project description
+🚀 How to Run
+Open index.html in your browser.
 
-## 🚀 How to Run  
-Open `index.html` in your browser.
-
-## 🌐 Live Demo  
-[🔗 View Live Project](https://codebyabhishek404.github.io/localmart-website/)
-
+🌐 Live Demo
+🔗 View Live Project
 
 👥 Team Members
 Abhishek Jha – Frontend Developer
@@ -63,14 +63,27 @@ Kumari Saumya – UI/UX Designer
 
 Rishav Raj Singh – JavaScript Developer
 
-Aishwarya – Content 
+Aishwarya – Content
 
-Jayesh kumar - Content Writer
+Jayesh Kumar – Content Writer
 
 👨‍💻 Author
 Abhishek Jha
 📧 jhaabhishek445@example.com
-🔗 [GitHub-Profile](https://github.com/CodeByAbhishek404)
+🔗 GitHub Profile
 
 📄 License
 This project is licensed under the MIT License – feel free to use it for learning or demo purposes.
+
+yaml
+Copy
+Edit
+
+---
+
+✅ Save this as `README.md`, then run:
+
+```bash
+git add README.md
+git commit -m "📝 Updated README with clickable live link"
+git push origin main
