@@ -70,7 +70,7 @@ Jayesh Kumar – Content Writer
 👨‍💻 Author
 Abhishek Jha
 📧 jhaabhishek445@example.com
-🔗 GitHub Profile
+🔗 GitHub Profile 
 
 📄 License
 This project is licensed under the MIT License – feel free to use it for learning or demo purposes.
